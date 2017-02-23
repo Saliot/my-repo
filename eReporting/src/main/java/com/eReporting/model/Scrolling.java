@@ -13,7 +13,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="SCROLLING")
+@Table(name="ER_SCROLLING")
 public class Scrolling {
 
 	@Id

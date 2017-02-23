@@ -10,13 +10,15 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
-@Table(name="SCROLLINGCHAPTER")
+@Table(name="ER_SCROLLINGCHAPTER")
 public class ScrollingChapter {
 
 	@Id
 	@GeneratedValue (strategy=GenerationType.AUTO)
-	@Column (name="SCROLLINGCHPATERKEY",unique = true, nullable = false)
+	@Column (name="SCROLLINGCHAPTERKEY",unique = true, nullable = false)
 	private int scrollingChapterKey;
 	
 	@Column (name="CHAPTERINFERIOR",nullable = false,length=10)
@@ -29,7 +31,7 @@ public class ScrollingChapter {
 	private String operator;
 	
 	@ManyToOne
-	@JoinColumn(name="SCROLIINGKEY" ,foreignKey = @ForeignKey(name = "FK_SCROLLING"))
+	@JoinColumn(name="SCROLLINGKEY" ,foreignKey = @ForeignKey(name = "FK_SCROLLING"))
 	private Scrolling scrolling;
 	
 
@@ -64,12 +66,13 @@ public class ScrollingChapter {
 	public void setOperator(String operator) {
 		this.operator = operator;
 	}
-
+	
+/*
 	public Scrolling getScrolling() {
 		return scrolling;
 	}
 
 	public void setScrolling(Scrolling scrolling) {
 		this.scrolling = scrolling;
-	}
+	}*/
 }
