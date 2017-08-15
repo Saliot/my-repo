@@ -69,13 +69,36 @@ INSERT INTO er_scrollingchapter (scrollingchapterkey,scrollingkey,chapterinferio
 VALUES (NULL,3,'330000','430000','+');
 
 --MENU
-INSERT INTO `ereporting`.`er_menuitem` (`menuitemkey`, `menuitemdescription`, `menuitempath`, `menuitemicon`, `menuitemorder`, `menuitemparentkey`) 
-VALUES (NULL, 'Regulatory Reporting', '#', 'fa fa-file-pdf-o', '1', NULL);
-INSERT INTO `ereporting`.`er_menuitem` (`menuitemkey`, `menuitemdescription`, `menuitempath`, `menuitemicon`, `menuitemorder`, `menuitemparentkey`) 
-VALUES (NULL, 'Custom Reporting', '#', 'fa fa-file', '2', NULL);
-INSERT INTO `ereporting`.`er_menuitem` (`menuitemkey`, `menuitemdescription`, `menuitempath`, `menuitemicon`, `menuitemorder`, `menuitemparentkey`) 
-VALUES (NULL, 'Admnistration', '#', 'fa fa-cogs', '3', NULL);
-INSERT INTO `ereporting`.`er_menuitem` (`menuitemkey`, `menuitemdescription`, `menuitempath`, `menuitemicon`, `menuitemorder`, `menuitemparentkey`) 
-VALUES (NULL, 'User Management', '#',NULL, '1', 3);
-INSERT INTO `ereporting`.`er_menuitem` (`menuitemkey`, `menuitemdescription`, `menuitempath`, `menuitemicon`, `menuitemorder`, `menuitemparentkey`) 
-VALUES (NULL, 'User Profiles', '#',NULL, '2', 3);
+INSERT INTO `ereporting`.`er_menuitem` (`menuitemkey`, `menuitemdescription`, `menuitempath`, `menuitemicon`, `menuitemorder`,`isVisible`,`menuitemparentkey`) 
+VALUES (NULL, 'Regulatory Reporting', '#', 'fa fa-file-pdf-o', '1','1', NULL);
+INSERT INTO `ereporting`.`er_menuitem` (`menuitemkey`, `menuitemdescription`, `menuitempath`, `menuitemicon`, `menuitemorder`,`isVisible`, `menuitemparentkey`) 
+VALUES (NULL, 'Custom Reporting', '#', 'fa fa-file', '2','1', NULL);
+INSERT INTO `ereporting`.`er_menuitem` (`menuitemkey`, `menuitemdescription`, `menuitempath`, `menuitemicon`, `menuitemorder`,`isVisible`, `menuitemparentkey`) 
+VALUES (NULL, 'Configuration', '#', 'fa fa-cubes', '3','1', NULL);
+INSERT INTO `ereporting`.`er_menuitem` (`menuitemkey`, `menuitemdescription`, `menuitempath`, `menuitemicon`, `menuitemorder`,`isVisible`, `menuitemparentkey`) 
+VALUES (NULL, 'Administration', '#', 'fa fa-cogs','4', '1', NULL);
+INSERT INTO `ereporting`.`er_menuitem` (`menuitemkey`, `menuitemdescription`, `menuitempath`, `menuitemicon`, `menuitemorder`,`isVisible`, `menuitemparentkey`) 
+VALUES (NULL, 'User Management', '#',NULL, '1','0', 4);
+INSERT INTO `ereporting`.`er_menuitem` (`menuitemkey`, `menuitemdescription`, `menuitempath`, `menuitemicon`, `menuitemorder`,`isVisible`, `menuitemparentkey`) 
+VALUES (NULL, 'User Profiles', '#',NULL, '2','0', 4);
+INSERT INTO `ereporting`.`er_menuitem` (`menuitemkey`, `menuitemdescription`, `menuitempath`, `menuitemicon`, `menuitemorder`,`isVisible`, `menuitemparentkey`) 
+VALUES (NULL, 'Personal SetUp', '#', 'fa fa-user', '5','1', NULL);
+
+
+--FORM
+INSERT INTO er_form (formKey, formCode, formDescription, formDescription_FR) 
+VALUES (NULL,'REGIST','Registration','Enregistrement');
+
+INSERT INTO er_form (formKey, formCode, formDescription, formDescription_FR) 
+VALUES (NULL,'LOGIN','Login','Connexion');
+
+
+--FORMFIELD
+INSERT INTO er_formfield (formFieldKey,formFieldCode,formFieldDescription,formFieldDescription_FR) 
+VALUES (NULL,'FIRSTNAME','First Name','Prénom');
+
+INSERT INTO er_formfield (formFieldKey,formFieldCode,formFieldDescription,formFieldDescription_FR) 
+VALUES (NULL,'LASTNAME','Last Name','Nom');
+
+INSERT INTO er_formfield (formFieldKey,formFieldCode,formFieldDescription,formFieldDescription_FR) 
+VALUES (NULL,'EMAIL','Email','Email');

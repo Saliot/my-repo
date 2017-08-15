@@ -35,6 +35,9 @@ public class MenuItem {
 	@Column (name="MENUITEMORDER")
 	private int menuitemOrder;
 	
+	@Column (name="ISVISIBLE")
+	private int isVisible;
+	
 	@ManyToOne(cascade={CascadeType.ALL} , fetch=FetchType.LAZY)
 	@JoinColumn(name="MENUITEMPARENTKEY")
 	private MenuItem parentMenuitem;
@@ -99,5 +102,14 @@ public class MenuItem {
 	public void setChildreenMenuitems(List<MenuItem> childreenMenuitems) {
 		this.childreenMenuitems = childreenMenuitems;
 	}
+
+	public int getIsVisible() {
+		return isVisible;
+	}
+
+	public void setIsVisible(int isVisible) {
+		this.isVisible = isVisible;
+	}
+	
 	
 }

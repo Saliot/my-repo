@@ -12,6 +12,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import com.eReporting.model.reference.Company;
+import com.eReporting.model.reference.Country;
 
 @Entity
 @Table(name="ER_USER")
@@ -32,9 +33,14 @@ public class User {
 	private String email;
 	
 	@ManyToOne
+	@JoinColumn(name="COUNTRYKEY",foreignKey = @ForeignKey(name = "FK_USER_COUNTRY"))
+	private Country country;
+		
+	@ManyToOne
 	@JoinColumn(name="COMPANYKEY",foreignKey = @ForeignKey(name = "FK_USER_COMPANY"))
 	private Company company;
 	
+
 	@Column (name="PASSWORD",unique = true, nullable = false, length=255)
 	private String password;
 	
@@ -85,6 +91,22 @@ public class User {
 		this.email = email;
 	}
 	
+	public Country getCountry() {
+		return country;
+	}
+
+	public void setCountry(Country country) {
+		this.country = country;
+	}
+	
+	public Company getCompany() {
+		return company;
+	}
+
+	public void setCompany(Company company) {
+		this.company = company;
+	}
+
 	public String getPassword() {
 		return password;
 	}
